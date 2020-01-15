@@ -1,0 +1,96 @@
+/* Timer Table */
+
+.container {
+  width: 100vh;
+  height: 100vh;
+}
+#stopwatch-table {
+  font-family: roboto slab;
+  display: inline-block;
+  /*border: solid 1.5pt lightgray;*/
+  border-radius: 5px;
+  background-color: white;
+  font-size: 1em;
+  padding: 10% 10%;
+}
+#timer-table-time {
+  text-align: center;
+}
+#stopwatch-table td {
+  /*border: 1px solid #EFEBE9;*/
+  height: 120px;
+}
+#stopwatch-table tr:hover {
+  /*ackground-color: #FAFAFA;*/
+}
+.timer-table-row-time {
+  width: 250px;
+  text-align: center;
+}
+.timer-table-row-btns {
+  width: 290px;
+  padding-left: 1%;
+}
+.container button {
+  height: 75px;
+  width: 90px;
+  margin: auto;
+  
+  box-shadow: inset 0px .5px 0px 0px #C8E6C9;
+	background: linear-gradient(to bottom, white 90%, #EFEBE9 100%);
+	border-radius: 8px;
+	border: 1.4px solid #EFEBE9;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 1.5em;
+	text-decoration: none;
+	text-shadow: 0px .5px 0px #E8F5E9;
+  outline: none;
+}
+.container button:hover {
+	background: linear-gradient(to bottom, #E8F5E9 90%, #B0BEC5 100%);
+  opacity: 60%;
+}
+.container button:active {
+	position: relative;
+	top: 1px;
+}
+
+.time {
+  margin: auto;
+}
+.time-digits {
+  font-size: 2.5em;
+}
+.stopwatch-time-digits {
+  position: absolute;
+  margin: -27px auto auto -118px;
+}
+#stopwatch-master {
+  display: none;
+  position: absolute;
+  margin: 20px auto auto 62px;
+  font-size: 1.7em;
+}
+
+#laps-list {
+  display: none;
+  max-height: 340px;
+  width: 240px;
+  overflow: scroll;
+  font-size: 1.6em;
+  top: 0;
+  vertical-align: top;
+  overflow-x: hidden;
+  font-family: roboto;
+}
+#laps-list-title {
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+#lap-times{
+  list-style-type: numerical;
+  margin-top: 0;
+}
