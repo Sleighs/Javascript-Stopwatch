@@ -55,7 +55,6 @@
 	position: relative;
 	top: 1px;
 }
-
 .time {
   margin: auto;
 }
@@ -73,6 +72,8 @@
   font-size: 1.7em;
 }
 
+
+/* Lap List */
 #laps-list {
   display: none;
   max-height: 340px;
@@ -93,4 +94,18 @@
 #lap-times{
   list-style-type: numerical;
   margin-top: 0;
+}
+
+
+/* Text Blink */
+.blink-text {
+  animation: blinker 0.2s linear 1;
+}
+.blink-text-pause {
+  animation: blinker 0.15s linear 1;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
