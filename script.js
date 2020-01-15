@@ -18,16 +18,18 @@ var STOPWATCH = {
     if (this.state == "started"){
       this.stop();
     } else {
+      //if watch hasn't started create new start time
       if (this.timeBegan === null) {
         this.timeBegan = new Date();
         this.timeBeganMaster = this.timeBegan;
       }
-
+      
+      //Add stopped duration to account for restarting watch
       if (this.timeStopped !== null) {
           this.stoppedDuration += (new Date() - this.timeStopped);
       }
-      //console.log(this.stoppedDuration);
-
+      
+      //Set interval to start wtch
       this.started = setInterval(this.clockRunning, 10);
       this.state = "started";
       document.getElementById("sw-start").innerHTML = "Stop";
@@ -61,6 +63,7 @@ var STOPWATCH = {
     document.getElementById("laps-list").style.display = "none";
   },
   clockRunning: function(){
+    //Get the difference betwwen the current time and the start time then remove the amount of time paused if paused
     var currentTime = new Date()
         , timeElapsed = new Date(currentTime - STOPWATCH.timeBegan - STOPWATCH.stoppedDuration);
         STOPWATCH.hour = timeElapsed.getUTCHours();
@@ -74,7 +77,7 @@ var STOPWATCH = {
         (STOPWATCH.sec > 9 ? STOPWATCH.sec : "0" + STOPWATCH.sec) + "." + 
         (STOPWATCH.ms > 99 ? STOPWATCH.ms : STOPWATCH.ms > 9 ? "0" + STOPWATCH.ms : "00" + STOPWATCH.ms);
     
-    //Master time
+    //Master time for measuring laps
     var masterTime = new Date()
         , masterTimeElapsed = new Date(masterTime - STOPWATCH.timeBeganMaster - STOPWATCH.stoppedDuration);
         STOPWATCH.hourM = masterTimeElapsed.getUTCHours();
