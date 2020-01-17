@@ -124,13 +124,14 @@ var STOPWATCH = {
     if (this.laps.length > 0) {
       document.getElementById("laps-list").style.display = "inline-block";
     }  
-
+    
+    // Clear lap table and repopulate list
     var lapTimesEle = document.getElementById("lap-times");
-    // Clear lap table for refresh
+    
     while (lapTimesEle.firstChild) {
       lapTimesEle.removeChild(lapTimesEle.firstChild);
     }
-    // Create lap list item for each lap and add to list
+    
     for (var i = 0; i < this.laps.length; i++){
       var currentLap =   
         (this.laps[i].hour > 9 ? this.laps[i].hour : "0" + this.laps[i].hour) + ":" + 
