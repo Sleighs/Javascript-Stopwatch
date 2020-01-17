@@ -108,7 +108,6 @@ var STOPWATCH = {
     this.lapBegan = new Date();
     
     var lapTime = new Date(this.lapBegan -= this.timeBegan);
-    console.log(lapTime.getUTCSeconds());
 
     // Save new lap to laps array using lap constructor and push
     var newLapTime = new this.lap(
